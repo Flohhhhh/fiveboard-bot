@@ -1,4 +1,6 @@
-# Discord Bot Template
+# Bun + TypeScript Discord Bot Template
+
+![intro](docs/images/intro.png)
 
 [![Bun](https://img.shields.io/badge/runtime-Bun-f9f1e1?logo=bun)](https://bun.sh/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -6,6 +8,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A simple, type-safe Discord Bot template built with Bun + Biome + TypeScript.
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/7_bi9B?referralCode=DIAbPh&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Features
 

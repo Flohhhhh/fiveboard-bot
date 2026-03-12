@@ -16,6 +16,7 @@ A simple, type-safe Discord Bot template built with Bun + Biome + TypeScript.
 - Fast runtime with Bun
 - Full type safety with Zod environment variable validation
 - Dynamic command/event loading
+- Optional beta tester role auto-assignment on member join
 - Docker/Railway deployment ready
 
 ## Quick Start
@@ -38,7 +39,14 @@ Edit `.env`:
 DISCORD_BOT_TOKEN=your_bot_token_here
 DISCORD_APPLICATION_ID=your_application_id_here
 DISCORD_GUILD_ID=your_guild_id_here  # optional
+FIVEBOARD_ENABLE_BETA_ROLE=false
+FIVEBOARD_GUILD_ID=your_runtime_guild_id_here
+FIVEBOARD_BETA_TESTER_ROLE_ID=your_beta_tester_role_id_here
 ```
+
+If you enable `FIVEBOARD_ENABLE_BETA_ROLE=true`, `FIVEBOARD_BETA_TESTER_ROLE_ID`
+becomes required. You also need to enable the `Server Members Intent` for the bot
+in the Discord Developer Portal.
 
 ### Deploy Commands
 
@@ -67,7 +75,8 @@ src/
 │   └── info.ts
 ├── events/           # Event handlers
 │   ├── ready.ts
-│   └── interaction-create.ts
+│   ├── interaction-create.ts
+│   └── guild-member-add.ts
 └── utils/
     ├── core.ts       # Command/event loader
     └── logger.ts     # Logger configuration
@@ -118,6 +127,9 @@ To deploy on Railway, simply connect the repository and set environment variable
 3. Set environment variables:
    - `DISCORD_BOT_TOKEN`
    - `DISCORD_APPLICATION_ID`
+   - `FIVEBOARD_ENABLE_BETA_ROLE`
+   - `FIVEBOARD_GUILD_ID`
+   - `FIVEBOARD_BETA_TESTER_ROLE_ID` when the feature is enabled
 4. Automatic deployment
 
 Or deploy via CLI:
